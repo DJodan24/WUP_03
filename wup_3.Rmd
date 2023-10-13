@@ -17,11 +17,22 @@ davisdata <- read.csv(file="UCDavis.csv")
 ## Our Goal is to answer this question Is there a difference between the alcohol consumed between the row
 ## you choose to sit in??
 
-## Now with ggplot - first select the basic data
 
-```{r}
-basicCN <- ggplot(davisdata,aes(y=alcohol,x=Seat))
+$H_0$: There is no difference between the average number of drinks imbibed between people conditioned on the row they sit in.
+$H_A$: The average number drinks is different between at least two rows. 
+
+
+
+#Method
+
+```{r eval=FALSE}
+davisdata <- davisdata %>%
+mutate(across(where(is.character), as.factor))
 ```
+
+We have changed all the character variables to factor variables.The type of this problem needs a numerical variable called Alcohol and a factor variable called Seat We will be using different helper files to help us complete the analysis of Numerical and factorial variables.
+
+
 ## Now add in boxplot
 
 ```{r}
