@@ -33,6 +33,11 @@ mutate(across(where(is.character), as.factor))
 We have changed all the character variables to factor variables.The type of this problem needs a numerical variable called Alcohol and a factor variable called Seat We will be using different helper files to help us complete the analysis of Numerical and factorial variables.
 
 
+## now with ggplot - first select the basic data
+
+```{r}
+basicCN <- ggplot(davisdata,aes(y=alcohol,x=Seat))
+```
 ## Now add in boxplot
 
 ```{r}
